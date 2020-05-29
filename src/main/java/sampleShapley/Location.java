@@ -1,3 +1,5 @@
+package sampleShapley;
+
 public class Location {
     private double longitude;
     private double latitude;
@@ -16,7 +18,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Location{" +
+        return "sampleShapley.Location{" +
                 "longitude=" + longitude +
                 ", latitude=" + latitude +
                 '}';

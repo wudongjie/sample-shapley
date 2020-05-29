@@ -1,5 +1,8 @@
+package sampleShapley;
+
 import org.apache.commons.math3.util.Precision;
 import org.junit.jupiter.api.Test;
+import sampleShapley.Gini;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,7 +20,5 @@ class GiniTest {
         gini2 = Precision.round(gini2, 4);
         assertEquals(gini1, result1);
         assertEquals(gini2, result2);
-        System.out.println(gini1);
-        System.out.println(gini2);
     }
 }

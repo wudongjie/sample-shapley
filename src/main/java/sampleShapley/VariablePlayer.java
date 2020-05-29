@@ -1,3 +1,5 @@
+package sampleShapley;
+
 import tech.tablesaw.api.DoubleColumn;
 
 /**

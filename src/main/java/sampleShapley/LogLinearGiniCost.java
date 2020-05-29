@@ -1,3 +1,5 @@
+package sampleShapley;
+
 import smile.regression.LinearModel;
 import tech.tablesaw.api.DoubleColumn;
 import tech.tablesaw.api.Table;

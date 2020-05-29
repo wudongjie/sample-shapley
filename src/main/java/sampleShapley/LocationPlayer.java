@@ -1,3 +1,5 @@
+package sampleShapley;
+
 public class LocationPlayer<T extends Location> extends Player<T> {
     public LocationPlayer(T data) {
         setData(data);

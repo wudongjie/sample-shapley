@@ -1,3 +1,5 @@
+package sampleShapley;
+
 import java.util.ArrayList;
 
 public class DeliveryCost implements  ICostFunction{
@@ -9,9 +11,9 @@ public class DeliveryCost implements  ICostFunction{
 
     @Override
     public double cost(Player[] players) {
-        // players must be Location player.
+        // players must be sampleShapley.Location player.
         if (!(players[0].getData() instanceof Location)) {
-            throw new ClassFormatError("Players should contain Location");
+            throw new ClassFormatError("Players should contain sampleShapley.Location");
         }
         ArrayList locationOn = new ArrayList();
         for (Player p:players) {

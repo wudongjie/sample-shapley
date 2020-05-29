@@ -1,8 +1,10 @@
+package sampleShapley;
+
 /**
- * The abstract class Player defines the player in the Shapley computation.
+ * The abstract class sampleShapley.Player defines the player in the sampleShapley.Shapley computation.
  * The player could be a variable/factor in the regression, could be a pixel in a picture,
  * or it could be a location of a place.
- * The player could cooperate (on) or not cooperate (off) in the Shapley computation.
+ * The player could cooperate (on) or not cooperate (off) in the sampleShapley.Shapley computation.
  * Data held by the player could be changed based on whether the player is on or off.
  * @param <T> type T could be Double[], DoubleColumn, a single value or a lat/long pair.
  */
@@ -37,5 +39,10 @@ public abstract class Player<T> {
 
     public boolean isInUse() {
         return inUse;
+    }
+
+    @Override
+    public String toString() {
+        return "sampleShapley.Player{" + this.hashCode() + "}";
     }
 }

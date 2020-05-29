@@ -1,11 +1,13 @@
+package sampleShapley;
+
 import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 /**
- * This is a class for computing Shapley Value.
- * The Shapley value is originally introduced by Shapley(1951) to solve the cooperative game problem.
+ * This is a class for computing sampleShapley.Shapley Value.
+ * The sampleShapley.Shapley value is originally introduced by sampleShapley.Shapley(1951) to solve the cooperative game problem.
  * It can also be applied in many other situations, e.g. Transportation, machine learning.
- * This project provides two ways to compute the Shapley value (non-sampling / sampling)
+ * This project provides two ways to compute the sampleShapley.Shapley value (non-sampling / sampling)
  * Non-sampling is computational expensive with n! steps, while sampling massively reduce the computational complexity.
  * In addition, we provide several cost functions in line with different use cases.
  *
@@ -24,10 +26,10 @@ public class Shapley {
     }
 
     /**
-     * This is the main method for Shapley computation.
+     * This is the main method for sampleShapley.Shapley computation.
      * @param isSampling use the sampling method if it is true.
-     * @param steps define the number of steps using in computing one Shapley value.
-     * @return a double[] in which each value corresponding to the Shapley value for the players array.
+     * @param steps define the number of steps using in computing one sampleShapley.Shapley value.
+     * @return a double[] in which each value corresponding to the sampleShapley.Shapley value for the players array.
      */
     public double[] computeShapley(boolean isSampling, int steps) {
         ArrayList<ArrayList> permutationSet;
@@ -40,9 +42,9 @@ public class Shapley {
             permutationSet = p.getSamplePermutationSet(steps);
         }
         for (int s = 0; s < players.length; s++) {
-            // compute the Shapley value for each player
+            // compute the sampleShapley.Shapley value for each player
             // s is the index of the original set of players
-            double shapleyValue = 0; // initialize the Shapley value
+            double shapleyValue = 0; // initialize the sampleShapley.Shapley value
             System.out.println("Start computing " + s + " player");
             for (ArrayList<Integer> a:permutationSet) {
                 // use the permutation set to determine the subset used in the cost function
@@ -62,7 +64,7 @@ public class Shapley {
             }
             shapleyValue = shapleyValue / permutationSet.size();
             shapleySet[s] = shapleyValue;
-            System.out.println("The Shapley value is: " + shapleyValue);
+            System.out.println("The sampleShapley.Shapley value is: " + shapleyValue);
         }
         return shapleySet;
     }

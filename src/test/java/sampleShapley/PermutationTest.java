@@ -1,3 +1,7 @@
+package sampleShapley;
+
+import sampleShapley.Permutation;
+
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,12 +19,10 @@ class PermutationTest {
 
     @org.junit.jupiter.api.Test
     void getPermutationSet() {
-        float startTime = System.currentTimeMillis();
-        //System.out.println(p1.getPermutationSet());
-        //p1.getPermutationSet();
-        System.out.println(p1.getSamplePermutationSet(1000));
-        float endTime = System.currentTimeMillis();
-        System.out.println("The computational time consumption is: " + (endTime - startTime));
+        ArrayList permutationSet0 = p0.getPermutationSet();
+        assertEquals(6, permutationSet0.size());
+        ArrayList permutationSet1 = p1.getSamplePermutationSet(1000);
+        assertEquals(1000, permutationSet1.size());
         // Get the Java runtime
         Runtime runtime = Runtime.getRuntime();
         // Run the garbage collector

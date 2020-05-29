@@ -1,17 +1,24 @@
+package sampleShapley;
+
 import java.util.ArrayList;
 
-public class SampleShortestDistanceFunction extends DistanceFunction {
+public class ShortestDistanceFunction extends DistanceFunction{
     private Location startLocation;
-    private int steps;
-    public SampleShortestDistanceFunction(Location startLocation, int steps) {
+
+    /**
+     * Given a startLocation,
+     * initialize the sampleShapley.ShortestDistanceFunction
+     * @param startLocation the start location
+     */
+    public ShortestDistanceFunction(Location startLocation) {
         this.startLocation = startLocation;
-        this.steps = steps;
     }
+
 
     @Override
     public void distance(ArrayList locations) {
         Permutation p = new Permutation(locations.toArray());
-        ArrayList<ArrayList> permutationSet = p.getSamplePermutationSet(steps);
+        ArrayList<ArrayList> permutationSet = p.getPermutationSet();
         Location start = new Location(startLocation.getLongitude(),startLocation.getLatitude());
         double distance = 10000.0; //Initialize the distance
         ArrayList<Location> bestSeq = new ArrayList<Location>();
@@ -30,4 +37,6 @@ public class SampleShortestDistanceFunction extends DistanceFunction {
         this.distance = distance;
         this.orderedLocations = bestSeq;
     }
+
+
 }

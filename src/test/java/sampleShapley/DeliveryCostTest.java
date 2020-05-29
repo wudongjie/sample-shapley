@@ -1,7 +1,7 @@
+package sampleShapley;
 
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
-import java.util.Arrays;
+import sampleShapley.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,17 +18,20 @@ class DeliveryCostTest {
         for (int i=0; i<3; i++) {
             players[i] = new LocationPlayer(locations[i]);
         }
-        ShortestDistanceFunction ds = new ShortestDistanceFunction(l0); // Create DistanceFunction
-        DeliveryCost deliveryCost = new DeliveryCost(ds);// Initialize DeliveryCost
+        ShortestDistanceFunction ds = new ShortestDistanceFunction(l0); // Create sampleShapley.DistanceFunction
+        DeliveryCost deliveryCost = new DeliveryCost(ds);// Initialize sampleShapley.DeliveryCost
         double dist = deliveryCost.cost(players);// run cost()
-        System.out.println(dist);
         System.out.println(ds.getOrderedLocations());
         double[] shapleyValues;
         Shapley shap1 = new Shapley();
         shap1.setCostFunction(new DeliveryCost(ds));
         shap1.setPlayers(players);
         shapleyValues = shap1.computeShapley(false, 1000);
-        System.out.println(Arrays.toString(shapleyValues));
+        double sumShap = 0;
+        for (double s:shapleyValues) {
+            sumShap += s;
+        }
+        assertEquals(sumShap, dist); //The sum of sampleShapley.Shapley values should be equal to total distance.
     }
 
 
