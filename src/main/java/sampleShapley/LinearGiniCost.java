@@ -4,7 +4,10 @@ import smile.regression.LinearModel;
 import tech.tablesaw.api.DoubleColumn;
 import tech.tablesaw.api.Table;
 
-public class LinearGiniCost implements  ICostFunction{
+/**
+ * The LinearGiniCost treats the Gini index of a fitted value of a linear regression model as the cost function.
+ */
+public class LinearGiniCost implements ICostFunction{
     private LinearModel linearModel;
     private String yName;
     public LinearGiniCost(LinearModel lm, String yName) {

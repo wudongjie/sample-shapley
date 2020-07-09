@@ -9,6 +9,10 @@ import tech.tablesaw.io.csv.CsvReader;
 
 import java.io.IOException;
 
+/**
+ * The ShapleyCsvReader class reads data from external CSV tables
+ * and generates players for the Shapley computation.
+ */
 public class ShapleyCsvReader implements ShapleyReader {
     private DoubleColumn y;
     private Table X;

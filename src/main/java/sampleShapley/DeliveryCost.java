@@ -2,6 +2,10 @@ package sampleShapley;
 
 import java.util.ArrayList;
 
+
+/**
+ * The cost function (shortest distance) of traversing n Locations from the start location.
+ */
 public class DeliveryCost implements  ICostFunction{
     private DistanceFunction distanceFunction;
     private double distance;
@@ -18,7 +22,7 @@ public class DeliveryCost implements  ICostFunction{
         ArrayList locationOn = new ArrayList();
         for (Player p:players) {
             if (p.isInUse()) {
-                locationOn.add(p.getData());
+                locationOn.add(p);
             }
         }
         distanceFunction.distance(locationOn);

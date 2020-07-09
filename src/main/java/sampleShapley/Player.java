@@ -9,6 +9,7 @@ package sampleShapley;
  * @param <T> type T could be Double[], DoubleColumn, a single value or a lat/long pair.
  */
 public abstract class Player<T> {
+    protected String name = null;
     protected T data;
     protected T dataOn;
     protected T dataOff;
@@ -21,7 +22,7 @@ public abstract class Player<T> {
     }
     public void setData(T data) {
         this.data = data;
-    };
+    }
     public abstract void generateDataOff();
     public abstract void generateDataOn();
 
@@ -43,6 +44,14 @@ public abstract class Player<T> {
 
     @Override
     public String toString() {
-        return "sampleShapley.Player{" + this.hashCode() + "}";
+        if (this.name == null) {
+            return "Player{" + this.hashCode() + "}";
+        } else {
+            return this.name;
+        }
+    }
+
+    public String getName() {
+        return name;
     }
 }

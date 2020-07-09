@@ -4,6 +4,9 @@ import smile.regression.LinearModel;
 import tech.tablesaw.api.DoubleColumn;
 import tech.tablesaw.api.Table;
 
+/**
+ * The LogLinearGiniCost treats the Gini index of a fitted value of a log-linear regression model as the cost function.
+ */
 public class LogLinearGiniCost implements ICostFunction {
     private LinearModel linearModel;
     private String yName;

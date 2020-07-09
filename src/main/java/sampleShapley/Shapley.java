@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 /**
- * This is a class for computing sampleShapley.Shapley Value.
- * The sampleShapley.Shapley value is originally introduced by sampleShapley.Shapley(1951) to solve the cooperative game problem.
+ * This is a class for computing Shapley Value.
+ * The Shapley value is originally introduced by Shapley(1951) to solve the cooperative game problem.
  * It can also be applied in many other situations, e.g. Transportation, machine learning.
- * This project provides two ways to compute the sampleShapley.Shapley value (non-sampling / sampling)
- * Non-sampling is computational expensive with n! steps, while sampling massively reduce the computational complexity.
- * In addition, we provide several cost functions in line with different use cases.
+ * This project provides two ways to compute the Shapley value (non-sampling / sampling)
+ * Non-sampling is computationally expensive with n! steps, while sampling massively reduce the computational complexity.
+ * To compute the Shapley value, one only needs to set the cost function and correspondent players
+ * In this package, we provide several cost functions and players in line with different use cases.
+ *
  *
  * @author Dongjie Wu
  * @email d.wu2@uq.edu.au
@@ -28,8 +30,8 @@ public class Shapley {
     /**
      * This is the main method for sampleShapley.Shapley computation.
      * @param isSampling use the sampling method if it is true.
-     * @param steps define the number of steps using in computing one sampleShapley.Shapley value.
-     * @return a double[] in which each value corresponding to the sampleShapley.Shapley value for the players array.
+     * @param steps define the number of steps using in computing one Shapley value.
+     * @return a double[] in which each value corresponding to the Shapley value for the players array.
      */
     public double[] computeShapley(boolean isSampling, int steps) {
         ArrayList<ArrayList> permutationSet;

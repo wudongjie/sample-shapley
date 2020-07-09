@@ -21,10 +21,20 @@ class ShortestDistanceFunctionTest {
         locations1.addAll(Arrays.asList(l1,l2,l3));
         ArrayList<Location> locations2 = new ArrayList<Location>();
         locations2.addAll(Arrays.asList(l1,l2,l3,l4,l5,l6,l7,l8));
-        ShortestDistanceFunction ds = new ShortestDistanceFunction(l0); // Create sampleShapley.DistanceFunction
-        SampleShortestDistanceFunction ds2 = new SampleShortestDistanceFunction(l0, 1000);
-        ds.distance(locations1);
-        ds2.distance(locations2);
+        LocationPlayer start = new LocationPlayer(l0);
+        ArrayList<LocationPlayer> lp1 = new ArrayList<>();
+        ArrayList<LocationPlayer> lp2 = new ArrayList<>();
+        for (int i=0;i<locations1.size();i++) {
+                lp1.add(new LocationPlayer(locations1.get(i)));
+        }
+        for (int i=0;i<locations2.size();i++) {
+            lp2.add(new LocationPlayer(locations2.get(i)));
+        }
+
+        ShortestDistanceFunction ds = new ShortestDistanceFunction(start); // Create sampleShapley.DistanceFunction
+        SampleShortestDistanceFunction ds2 = new SampleShortestDistanceFunction(start, 1000);
+        ds.distance(lp1);
+        ds2.distance(lp2);
         System.out.println(ds.getDistance());
         System.out.println(ds2.getDistance());
     }

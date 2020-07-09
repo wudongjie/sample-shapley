@@ -14,11 +14,12 @@ class DeliveryCostTest {
         Location l2 = new Location(-27.4631724, 153.0171857);
         Location l3 = new Location(-27.4823876,153.0077367);
         Location[] locations = new Location[]{l1,l2,l3};
+        LocationPlayer start = new LocationPlayer(l0);
         LocationPlayer[] players = new LocationPlayer[3];// Create Correspondent LocationPlayers
         for (int i=0; i<3; i++) {
             players[i] = new LocationPlayer(locations[i]);
         }
-        ShortestDistanceFunction ds = new ShortestDistanceFunction(l0); // Create sampleShapley.DistanceFunction
+        ShortestDistanceFunction ds = new ShortestDistanceFunction(start); // Create sampleShapley.DistanceFunction
         DeliveryCost deliveryCost = new DeliveryCost(ds);// Initialize sampleShapley.DeliveryCost
         double dist = deliveryCost.cost(players);// run cost()
         System.out.println(ds.getOrderedLocations());

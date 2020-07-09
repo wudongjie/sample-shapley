@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public abstract class DistanceFunction {
     protected double distance;
-    protected ArrayList<Location> orderedLocations;
-    public abstract void distance(ArrayList locations);
+    protected ArrayList<LocationPlayer> orderedLocations;
+    public abstract void distance(ArrayList<LocationPlayer> locationPlayers);
     protected double distanceOfTwo(Location a, Location b){
         double earthRadius = 6371; //kilometers
         double dLat = Math.toRadians(b.getLatitude()-a.getLatitude());
@@ -14,14 +14,13 @@ public abstract class DistanceFunction {
                 Math.cos(Math.toRadians(a.getLatitude())) * Math.cos(Math.toRadians(b.getLatitude())) *
                         Math.sin(dLng/2) * Math.sin(dLng/2);
         double c = 2 * Math.atan2(Math.sqrt(d), Math.sqrt(1-d));
-        double dist = earthRadius * c;
-        return dist;
-    };
+        return earthRadius * c;
+    }
 
     public double getDistance() {
         return distance;
     }
-    public ArrayList<Location> getOrderedLocations() {
+    public ArrayList<LocationPlayer> getOrderedLocations() {
         return orderedLocations;
     }
 }

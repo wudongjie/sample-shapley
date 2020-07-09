@@ -3,7 +3,7 @@ package sampleShapley;
 import java.util.Arrays;
 
 /**
- * The
+ * The computation of Gini Index
  */
 public class Gini {
     private static double[] cumsum(double[] columnData) {
